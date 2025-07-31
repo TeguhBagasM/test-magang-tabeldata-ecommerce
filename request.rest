@@ -21,3 +21,4 @@ GET http://localhost:8080/api/products/search?keyword=laptop
 
 ### Test Get Available Products
 GET http://localhost:8080/api/products/available
+

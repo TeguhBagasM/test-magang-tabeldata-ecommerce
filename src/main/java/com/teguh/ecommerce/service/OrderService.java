@@ -28,11 +28,11 @@ public class OrderService {
     @Autowired
     private ProductRepository productRepository;
     
-    @Autowired
-    private UserRepository userRepository;
+    // @Autowired
+    // private UserRepository userRepository;
     
-    @Autowired
-    private StoreRepository storeRepository;
+    // @Autowired
+    // private StoreRepository storeRepository;
     
     // Get all orders for a user
     public List<OrderDto> getOrdersByUserId(Long userId) {
@@ -205,3 +205,4 @@ public class OrderService {
         
         return dto;
     }
+}

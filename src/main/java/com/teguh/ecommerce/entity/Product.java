@@ -26,6 +26,18 @@ public class Product {
     @Positive(message = "Price must be positive")
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
+
+    @NotNull(message = "Store ID is required")
+    @Column(name = "store_id", nullable = false)
+    private Long storeId;
+
+    public Long getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(Long storeId) {
+        this.storeId = storeId;
+    }
     
     @NotNull(message = "Stock is required")
     @Column(nullable = false)
@@ -106,6 +118,7 @@ public class Product {
     public String getImageUrl() {
         return imageUrl;
     }
+    
     
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;

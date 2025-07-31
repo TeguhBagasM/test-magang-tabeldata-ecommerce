@@ -45,8 +45,8 @@ public class CartController {
     // PUT /api/cart/{cartId} - Update cart item quantity
     @PutMapping("/{cartId}")
     public ResponseEntity<CartDto> updateCartItem(@PathVariable Long cartId, 
-                                                 @RequestParam Integer quantity,
-                                                 @RequestParam Long userId) {
+        @RequestParam Integer quantity,
+        @RequestParam Long userId) {
         try {
             CartDto updatedItem = cartService.updateCartItem(cartId, quantity, userId);
             return ResponseEntity.ok(updatedItem);
