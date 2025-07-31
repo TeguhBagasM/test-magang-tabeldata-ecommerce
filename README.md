@@ -32,15 +32,7 @@ Spring Boot adalah framework berbasis Java yang memudahkan pembuatan aplikasi be
 
 ### 1. Desain Database
 
-Entity utama:
-
-- **Toko**: Menyimpan info toko (id, nama, alamat)
-- **Barang**: Produk yang dijual (id, nama, harga, stok, id_toko)
-- **Pembelian**: Transaksi yang dilakukan (id, id_barang, jumlah, total_harga, tanggal)
-
-### 2. ERD (Entity Relationship Diagram)
-
-![ERD Diagram](images/schema.png)
+![Desain Database](images/schema.png)
 
 ### 2. Arsitektur Modul: Monolith
 
