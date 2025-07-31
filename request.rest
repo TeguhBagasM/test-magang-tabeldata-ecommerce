@@ -16,9 +16,56 @@ Content-Type: application/json
 ### Test Get Product by ID
 GET http://localhost:8080/api/products/1
 
-### Test Search Products
+### Test Search Products by Keyword
 GET http://localhost:8080/api/products/search?keyword=laptop
 
-### Test Get Available Products
+### Test Get All Available Products
 GET http://localhost:8080/api/products/available
 
+### Test Get Cart Items by User ID
+GET http://localhost:8080/api/cart/1
+
+### Test Add Item to Cart
+POST http://localhost:8080/api/cart
+Content-Type: application/json
+
+{
+  "userId": 3,
+  "productId": 1,
+  "quantity": 2
+}
+
+### Test Update Cart Item Quantity
+PUT http://localhost:8080/api/cart/3?quantity=3&userId=2
+
+### Test Delete Cart Item
+DELETE http://localhost:8080/api/cart/3?userId=2
+
+### Test Clear Cart for User
+DELETE http://localhost:8080/api/cart/clear/1
+
+### Test Get Cart Item Count by User ID
+GET http://localhost:8080/api/cart/count/4
+
+### Test Get Orders by User ID
+GET http://localhost:8080/api/orders/user/1
+
+### Test Get Order by Order ID
+GET http://localhost:8080/api/orders/2
+
+### Test Get Order by Invoice Number
+GET http://localhost:8080/api/orders/invoice/INV-20230201-001
+
+### Test Create Order
+POST http://localhost:8080/api/orders/checkout
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "cartItemIds": [5],
+  "shippingInfo": "Jl. Informatika No. 1, Bandung"
+}
+
+
+### Test Update Order Status
+PUT http://localhost:8080/api/orders/2/status?status=SHIPPED
