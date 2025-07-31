@@ -1,0 +1,23 @@
+### Test GET All Products
+GET http://localhost:8080/api/products
+
+### Test Create Product
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "Laptop Gaming",
+  "description": "High performance gaming laptop",
+  "price": 15000000,
+  "stock": 10,
+  "imageUrl": "https://example.com/laptop.jpg"
+}
+
+### Test Get Product by ID
+GET http://localhost:8080/api/products/1
+
+### Test Search Products
+GET http://localhost:8080/api/products/search?keyword=laptop
+
+### Test Get Available Products
+GET http://localhost:8080/api/products/available
