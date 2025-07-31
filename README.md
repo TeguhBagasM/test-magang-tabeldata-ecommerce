@@ -1,6 +1,6 @@
-# E-Commerce System - Magang Project
+# E-Commerce System - Magang Project - PT Tabel Data Informatika
 
-## 🧠 Teori
+## 🧠 Knowladge Base
 
 ### 1. Apa yang Anda ketahui tentang REST API?
 
@@ -73,3 +73,94 @@ Spring Boot adalah framework berbasis Java yang memudahkan pembuatan aplikasi be
 - Data Transfer Objects untuk API requests/responses
 - Memisahkan struktur database dari API contract
 - Validasi menggunakan Bean Validation
+
+---
+
+## 🛠️ API Endpoints
+
+### 📦 Product
+
+- `GET /api/products`
+  Menampilkan semua produk.
+
+- `POST /api/products`
+  Menambahkan produk baru.
+  **Body JSON:**
+
+  ```json
+  {
+    "name": "Laptop Gaming",
+    "description": "High performance gaming laptop",
+    "price": 15000000,
+    "stock": 10,
+    "imageUrl": "https://example.com/laptop.jpg"
+  }
+  ```
+
+- `GET /api/products/{id}`
+  Menampilkan detail produk berdasarkan ID.
+
+- `GET /api/products/search?keyword={keyword}`
+  Mencari produk berdasarkan keyword.
+
+- `GET /api/products/available`
+  Menampilkan produk yang stoknya masih tersedia.
+
+---
+
+### 🛒 Cart
+
+- `GET /api/cart/{userId}`
+  Menampilkan isi keranjang berdasarkan user ID.
+
+- `POST /api/cart`
+  Menambahkan item ke keranjang.
+  **Body JSON:**
+
+  ```json
+  {
+    "userId": 3,
+    "productId": 1,
+    "quantity": 2
+  }
+  ```
+
+- `PUT /api/cart/{cartItemId}?quantity={qty}&userId={userId}`
+  Mengubah jumlah item di keranjang.
+
+- `DELETE /api/cart/{cartItemId}?userId={userId}`
+  Menghapus item dari keranjang.
+
+- `DELETE /api/cart/clear/{userId}`
+  Menghapus semua item dari keranjang user.
+
+- `GET /api/cart/count/{userId}`
+  Menampilkan jumlah item di keranjang berdasarkan user ID.
+
+---
+
+### 📦 Orders
+
+- `GET /api/orders/user/{userId}`
+  Menampilkan semua pesanan berdasarkan user ID.
+
+- `GET /api/orders/{orderId}`
+  Menampilkan detail pesanan berdasarkan order ID.
+
+- `GET /api/orders/invoice/{invoiceNumber}`
+  Menampilkan pesanan berdasarkan nomor invoice.
+
+- `POST /api/orders/checkout`
+  Membuat pesanan baru.
+  **Body JSON:**
+
+  ```json
+  {
+    "userId": 1,
+    "cartItemIds": [5],
+    "shippingInfo": "Jl. Informatika No. 1, Bandung"
+  }
+  ```
+
+- `PUT /api/orders/{orderId}/status?status=SHIPPED`
+  Mengubah status pesanan.
