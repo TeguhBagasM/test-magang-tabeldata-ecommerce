@@ -29,7 +29,6 @@ public class ProductController {
         }
     }
     
-    // GET /api/products/{id} - Get product by ID
     @GetMapping("/{id}")
     public ResponseEntity<ProductDto> getProductById(@PathVariable Long id) {
         try {
@@ -42,7 +41,6 @@ public class ProductController {
         }
     }
     
-    // POST /api/products - Create new product
     @PostMapping
     public ResponseEntity<ProductDto> createProduct(@Valid @RequestBody ProductDto productDto) {
         try {
@@ -53,10 +51,9 @@ public class ProductController {
         }
     }
     
-    // PUT /api/products/{id} - Update product
     @PutMapping("/{id}")
     public ResponseEntity<ProductDto> updateProduct(@PathVariable Long id, 
-                                                   @Valid @RequestBody ProductDto productDto) {
+    @Valid @RequestBody ProductDto productDto) {
         try {
             ProductDto updatedProduct = productService.updateProduct(id, productDto);
             return ResponseEntity.ok(updatedProduct);
