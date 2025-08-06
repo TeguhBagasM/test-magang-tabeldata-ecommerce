@@ -61,9 +61,9 @@ POST http://localhost:8080/api/orders/checkout
 Content-Type: application/json
 
 {
-  "userId": 1,
-  "cartItemIds": [5],
-  "shippingInfo": "Jl. Informatika No. 1, Bandung"
+  "userId": 2,
+  "cartItemIds": [4],
+  "shippingInfo": "Jl. Cipageran No. 1, Cimahi"
 }
 
 

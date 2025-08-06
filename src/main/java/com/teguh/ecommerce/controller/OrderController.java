@@ -63,6 +63,7 @@ public class OrderController {
             OrderDto order = orderService.checkout(checkoutDto);
             return ResponseEntity.status(HttpStatus.CREATED).body(order);
         } catch (RuntimeException e) {
+            e.printStackTrace(); // log ke console
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
@@ -72,7 +73,7 @@ public class OrderController {
     // PUT /api/orders/{orderId}/status - Update order status
     @PutMapping("/{orderId}/status")
     public ResponseEntity<OrderDto> updateOrderStatus(@PathVariable Long orderId, 
-                                                     @RequestParam String status) {
+    @RequestParam String status) {
         try {
             OrderDto updatedOrder = orderService.updateOrderStatus(orderId, status);
             return ResponseEntity.ok(updatedOrder);
